@@ -1,0 +1,198 @@
+       /* CSS Variables for easy theme management */
+        :root {
+            --bg-color: #0a0a1a;
+            --bg-secondary-color: #1a1a2e;
+            --text-color: #e0e0e0;
+            --text-secondary-color: #a0a0c0;
+            --primary-accent-color: #00f5c3;
+            --secondary-accent-color: #7f5af0;
+            --glass-bg: rgba(26, 26, 46, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --font-body: 'Inter', sans-serif;
+            --font-heading: 'Orbitron', sans-serif;
+        }
+
+        /* Basic Setup & Scrollbar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-image: radial-gradient(circle at 10% 20%, rgba(127, 90, 240, 0.2), transparent 30%),
+                              radial-gradient(circle at 80% 90%, rgba(0, 245, 195, 0.15), transparent 35%);
+            background-attachment: fixed;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-accent-color);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00d1a8;
+        }
+
+        /* Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-brand {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-accent-color);
+            text-shadow: 0 0 10px rgba(0, 245, 195, 0.5);
+        }
+
+        .nav-links {
+            display: none;
+        }
+        @media (min-width: 992px) { /* Adjusted breakpoint for more space */
+            .nav-links {
+                display: flex;
+                gap: 0.5rem;
+            }
+        }
+        
+        .nav-links a {
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s;
+        }
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-accent-color);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-accent-color);
+        }
+        .nav-links a:hover::before, .nav-links a.active::before {
+            width: 100%;
+        }
+        
+        /* Hamburger Menu */
+        .hamburger-btn {
+            display: block;
+            cursor: pointer;
+            color: var(--text-color);
+            background: none;
+            border: none;
+        }
+        @media (min-width: 992px) { /* Adjusted breakpoint */
+            .hamburger-btn { display: none; }
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 75%;
+            max-width: 300px;
+            height: 100%;
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-left: 1px solid var(--glass-border);
+            transition: right 0.3s ease-in-out;
+            z-index: 999;
+            padding-top: 6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .mobile-menu.open {
+            right: 0;
+        }
+        .mobile-menu a {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+        }
+        .mobile-menu a:hover, .mobile-menu a.active {
+            color: var(--primary-accent-color);
+        }
+                /* General Section Styling */
+        .section {
+            min-height: 100vh;
+            padding: 8rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title-container {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-color);
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-accent-color), var(--primary-accent-color));
+            border-radius: 2px;
+            box-shadow: 0 0 15px var(--primary-accent-color);
+        }

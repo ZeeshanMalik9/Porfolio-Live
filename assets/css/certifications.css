@@ -1,0 +1,111 @@
+/* ============================================= */
+/* Certifications Section with Continuous Glow   */
+/* ============================================= */
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.certification-card {
+    position: relative;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Removed box-shadow from transition for a cleaner look */
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* The animated glowing border element */
+.certification-card::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -2px;
+    background: linear-gradient(45deg, var(--primary-accent-color), var(--secondary-accent-color), var(--primary-accent-color));
+    background-size: 200% 200%;
+    filter: blur(15px);
+    
+    /* --- THIS IS THE KEY CHANGE --- */
+    opacity: 0.7; /* Makes the glow visible by default */
+
+    transition: opacity 0.4s ease-in-out, filter 0.4s ease-in-out;
+    animation: glowing-border 8s linear infinite;
+    border-radius: inherit;
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Enhance the glow on hover */
+.certification-card:hover::before {
+    opacity: 1;
+    filter: blur(20px); /* Makes the glow slightly larger and more intense on hover */
+}
+
+/* Keyframes for the moving gradient glow */
+@keyframes glowing-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* --- Other card styles remain the same --- */
+
+.cert-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background-color: #1a1a2e;
+    overflow: hidden;
+}
+
+.cert-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.certification-card:hover .cert-img-placeholder img {
+    transform: scale(1.05);
+}
+
+.cert-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.cert-content p {
+    color: var(--text-color-secondary);
+    margin-top: 0.5rem;
+    flex-grow: 1;
+}
+
+.cert-content a {
+    margin-top: 1rem;
+    color: var(--primary-accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.cert-content a:hover {
+    text-decoration: underline;
+}
