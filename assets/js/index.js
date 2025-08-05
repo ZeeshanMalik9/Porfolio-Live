@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const getGeminiResponse = async (userInput) => {
                 showThinkingIndicator();
 
-                const apiKey = "AIzaSyAUTd6Pyu0zxPZf35WAzGSY6zYvozHYTsA"; // API key will be injected by the environment
+                const apiKey = "api-key"; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
                 // This is the context from the resume, which "trains" the model for this conversation.
