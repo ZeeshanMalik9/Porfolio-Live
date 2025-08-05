@@ -1,0 +1,23 @@
+{
+  "name": "portfoliofinalfiles",
+  "version": "1.0.0",
+  "description": "Welcome to the source code and documentation for my interactive portfolio website! This README explains in detail how each section works, how the files are organized, and how you can customize or extend the project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeeshanMalik9/Porfolio-Live.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeeshanMalik9/Porfolio-Live/issues"
+  },
+  "homepage": "https://github.com/ZeeshanMalik9/Porfolio-Live#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

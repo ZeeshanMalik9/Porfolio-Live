@@ -599,106 +599,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            const getGeminiResponse = async (userInput) => {
-                showThinkingIndicator();
 
-                const apiKey = "api-key"; 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+const getGeminiResponse = async (userInput) => {
+    showThinkingIndicator();
 
-                // This is the context from the resume, which "trains" the model for this conversation.
-                const resumeContext = `You are a helpful chatbot on the personal portfolio website of Zeeshan Malik. Your goal is to answer questions about him based on the following information from his resume. Be friendly and professional.
+    
+    const functionUrl = '/.netlify/functions/gemini';
 
-                **Name:** Zeeshan Malik
-                **Role:** Java Full-Stack Developer
-                **Location:** Bangalore, India
-                **Contact:** +91 8884296122, zeeshan.m9990@gmail.com
+    try {
+        const response = await fetch(functionUrl, {
+            method: 'POST',
+            body: JSON.stringify({ userInput: userInput })
+        });
+        
+        const data = await response.json();
+        removeThinkingIndicator();
+        
 
-                **Experience:**
-                - **Software Development Intern Trainee at Tap Academy (Feb 2025 - Jul 2025):** Engineered features for a food delivery app using Java, Spring Boot, and Hibernate. Developed RESTful APIs for frontend-backend communication with a MySQL database.
-                
-                **Technical Skills:**
-                - **Programming Languages:** Java, Python, JavaScript, C
-                - **Backend:** Spring Boot, Microservices Architecture, Spring Framework (Core, ORM, MVC, Security, Data JPA), Spring Security, JWT, REST APIs, OpenFeign, Eureka Discovery, API Gateway, Servlets, JSP, JDBC, Java EE, Hibernate
-                - **Frontend:** HTML5, CSS3, JavaScript (DOM, Events), Bootstrap
-                - **Databases:** MySQL, Oracle, JSON, XML
-                - **Tools:** Git, GitHub, Maven, Postman, Eclipse IDE, Apache Tomcat, GitHub Copilot
-                - **Core Competencies:** Data Structures, Algorithms, Object-Oriented Design, Problem Solving, Clean Code Principles, Exception Handling, Secure Authentication
+        if (data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
+            const botResponse = data.candidates[0].content.parts[0].text;
+            addMessage('bot', botResponse);
+        } else {
+            addMessage('bot', 'Sorry, I received an unexpected response. Please try again.');
+        }
 
-                **Projects:**
-                1.  **Quiz Competition Platform (Microservices):** Built with Java, Spring Boot, Spring Cloud, Eureka, Open Feign, Spring Security, JWT, OAuth2.
-                2.  **Online Food Delivery App (FooZee):** Built with Java EE (Servlets, JSP, JDBC).
-                3.  **Overhead Track System for Medicine Transportation:** Used Python, JavaScript, and Arduino Uno (IoT).
-                4. **Iris Voice Assistant:** Python-based voice assistant.
-                5. **Weather App:** Real-time weather data with HTML, CSS, JavaScript.
-
-                **Education:**
-                - **B.E. in Computer Science and Engineering** from Jain Institute of Technology, Davanagere (2021-2025), with a CGPA of 8.21.
-
-                **Certifications:**
-                - **Java Full Stack Web Development Certificate**
-                - **Data Structures & Algorithms**
-                - **Microservices with Spring Boot**`;
-
-                chatHistory.push({ role: "user", parts: [{ text: userInput }] });
-
-                const payload = {
-                    contents: [
-                        { role: "user", parts: [{ text: resumeContext + "\n\nNow, answer the following question from a visitor:\n" + userInput }] }
-                    ]
-                };
-
-                let retries = 3;
-                let delay = 1000;
-                let response;
-
-                while (retries > 0) {
-                    try {
-                        response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-
-                        if (response.ok) {
-                            const result = await response.json();
-                            removeThinkingIndicator();
-                            
-                            if (result.candidates && result.candidates.length > 0 &&
-                                result.candidates[0].content && result.candidates[0].content.parts &&
-                                result.candidates[0].content.parts.length > 0) {
-                                
-                                const botResponse = result.candidates[0].content.parts[0].text;
-                                addMessage('bot', botResponse);
-                                chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
-                            } else {
-                                addMessage('bot', "Sorry, I couldn't generate a response. The structure was unexpected.");
-                            }
-                            return; // Exit after successful response
-                        } else if (response.status === 429 || response.status >= 500) {
-                            // Throttling or server error, retry
-                            retries--;
-                            if (retries === 0) {
-                                throw new Error(`API request failed after multiple retries with status: ${response.status}`);
-                            }
-                            await new Promise(resolve => setTimeout(resolve, delay));
-                            delay *= 2; // Exponential backoff
-                        } else {
-                            // Other client-side error, don't retry
-                            throw new Error(`API request failed with status: ${response.status}`);
-                        }
-                    } catch (error) {
-                        retries--;
-                         if (retries === 0) {
-                            console.error('Error fetching Gemini response:', error);
-                            removeThinkingIndicator();
-                            addMessage('bot', 'Sorry, I am having trouble connecting. Please try again later.');
-                            return; // Exit after all retries failed
-                        }
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        delay *= 2;
-                    }
-                }
-            };
+    } catch (error) {
+        console.error('Error calling the serverless function:', error);
+        removeThinkingIndicator();
+        addMessage('bot', 'Sorry, I am having trouble connecting. Please try again later.');
+    }
+};
 
             chatForm.addEventListener('submit', (e) => {
                 e.preventDefault();
