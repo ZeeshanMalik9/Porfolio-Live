@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'OAuth2', icon: 'https://oauth.net/images/oauth-logo-square.png' },
         { name: 'Maven', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg' },
         { name: 'Postman', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg' },
-        { name: 'GitHub', icon: 'https://img.icons8.com/ios-filled/50/github.png' }
+        { name: 'GitHub', icon: 'https://img.icons8.com/ios-filled/50/github.png' },
+        { name: 'React Js', icon: 'https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000'}
     ];
     
     const experiences = [
@@ -40,12 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const projects = [
-        { title: 'ZeeMerce - E-Commerce Platform', description: 'A full-stack e-commerce platform with multi-role access (Customer, Seller, Admin), payment gateway integration using Razorpay & Stripe, and a containerized deployment using Docker.', image: 'assets/images/projects/ZeeMerce.png', github: 'https://github.com/ZeeshanMalik9/EZee-E-Commerce-Platform', live: 'https://zeeshanmalik9.github.io/EcommerceDoc/' },
-        { title: 'QiuzZee - Quiz Platform', description: 'A scalable microservices-based quiz platform with robust security using Spring Security, JWT, and OAuth2.', image: 'assets/images/projects/Quiz.png', github: 'https://github.com/ZeeshanMalik9/Quiz_Application_Spring', live: 'https://foozee-production.up.railway.app/' },
-        { title: 'FooZee - Food Delivery App', description: 'A full-stack food delivery application built with a classic Java EE stack (Servlets, JSP, JDBC).', image: 'assets/images/projects/food.png', github: 'https://github.com/ZeeshanMalik9/Food_Delivery_Web_Application', live: 'https://github.com/ZeeshanMalik9/Food_Delivery_Web_Application' },
-        { title: 'IoT Medicine Transport', description: 'An automated medicine transportation system using IoT, Python and Arduino.', image: 'assets/images/projects/medicine.jpg', github: 'https://github.com/ZeeshanMalik9/Pharma_Shift_Final_Year_Project', live: 'https://github.com/ZeeshanMalik9/Pharma_Shift_Final_Year_Project' },
-        { title: 'Iris Voice Assistant', description: 'A Python-based voice assistant capable of performing various tasks based on voice commands.', image: 'https://placehold.co/600x400/8bc34a/0a0a1a?text=Voice+AI', github: 'https://github.com/ZeeshanMalik9/Iris-Voice-assistent', live: 'https://github.com/ZeeshanMalik9/Iris-Voice-assistent' },
+        { title: 'ZeeMerce', description: 'A full-stack multi-vender e-commerce platform.', image: 'assets/images/projects/ZeeMerce.png', github: 'https://github.com/ZeeshanMalik9/EZee-E-Commerce-Platform', live: 'https://zeeshanmalik9.github.io/EcommerceDoc/' },
+        { title: 'QiuzZee', description: 'A scalable microservices-based quiz platform with robust security using Spring Security, JWT, and OAuth2.', image: 'assets/images/projects/Quiz.png', github: 'https://github.com/ZeeshanMalik9/Quiz_Application_Spring', live: 'https://zeeshanmalik9.github.io/quizee_documentation_page/' },
+        { title: 'FooZee', description: 'A full-stack food delivery application built with a classic Java EE stack (Servlets, JSP, JDBC).', image: 'assets/images/projects/food.png', github: 'https://github.com/ZeeshanMalik9/Food_Delivery_Web_Application', live: 'https://foozee-production.up.railway.app/' },
+        { title: 'Pharma-Shift', description: 'An automated medicine transportation system using IoT, Python and Arduino.', image: 'assets/images/projects/medicine.jpg', github: 'https://github.com/ZeeshanMalik9/Pharma_Shift_Final_Year_Project', live: 'https://github.com/ZeeshanMalik9/Pharma_Shift_Final_Year_Project' },
+        { title: 'Iris', description: 'A Python-based voice assistant capable of performing various tasks based on voice commands.', image: 'https://placehold.co/600x400/8bc34a/0a0a1a?text=Voice+AI', github: 'https://github.com/ZeeshanMalik9/Iris-Voice-assistent', live: 'https://github.com/ZeeshanMalik9/Iris-Voice-assistent' },
         { title: 'Weather App', description: 'A sleek weather application with real-time data from a third-party API, built with vanilla JS.', image: 'assets/images/projects/Weather.png', github: 'https://github.com/ZeeshanMalik9/Weather-App-API', live: 'https://zeeshanmalik9.github.io/Weather-App-API/' },
+        { title: 'STAN AI', description: 'A human-like AI chatbot with long-term memory, built with Node.js and the Gemini API.', image: 'assets/images/projects/stan.png', github: 'https://github.com/ZeeshanMalik9/STAN_AI', live: 'https://stan-ai.onrender.com/' }
+
     ];
     
     const certifications = [ 
