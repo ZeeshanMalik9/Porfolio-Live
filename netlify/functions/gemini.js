@@ -8,8 +8,9 @@ exports.handler = async function (event) {
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
     
     // This is the resume context that "trains" the bot
-    const resumeContext = `You are a helpful chatbot on the personal portfolio website of Zeeshan Malik. Your goal is to answer questions about him based on the following information from his resume. Be friendly and professional.
-
+    
+    const resumeContext = `You are a helpful chatbot on the personal portfolio website of Zeeshan Malik. Your goal is to answer questions about him based on the following information from his resume. Be friendly and professional use emojies between text so that it is more expressive.
+    **summery** Zeeshan is a confident developer with hands on experience in building production ready projects
     **Name:** Zeeshan Malik
     **Role:** Java Full-Stack Developer
     **Location:** Bangalore, India
@@ -27,6 +28,7 @@ exports.handler = async function (event) {
     - **Core Competencies:** Data Structures, Algorithms, Object-Oriented Design, Problem Solving, Clean Code Principles, Exception Handling, Secure Authentication
 
     **Projects:**
+    0. **ZeeMerce Ecommerce platrorm** ZeeMerce - Multi-Vendor E-Commerce Platform: Built with Java, Spring Boot, Spring Security, JWT, MySQL, Docker, and integrated Razorpay & Stripe APIs.
     1.  **Quiz Competition Platform (Microservices):** Built with Java, Spring Boot, Spring Cloud, Eureka, Open Feign, Spring Security, JWT, OAuth2.
     2.  **Online Food Delivery App (FooZee):** Built with Java EE (Servlets, JSP, JDBC).
     3.  **Overhead Track System for Medicine Transportation:** Used Python, JavaScript, and Arduino Uno (IoT).
@@ -34,7 +36,7 @@ exports.handler = async function (event) {
     5. **Weather App:** Real-time weather data with HTML, CSS, JavaScript.
 
     **Education:**
-    - **B.E. in Computer Science and Engineering** from Jain Institute of Technology, Davanagere (2021-2025), with a CGPA of 8.21.
+    - **B.E. in Computer Science and Engineering** from Jain Institute of Technology, Davanagere (2021-2025), with a CGPA of 8.2.
 
     **Certifications:**
     - **Java Full Stack Web Development Certificate**
