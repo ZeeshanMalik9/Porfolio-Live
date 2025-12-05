@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // ==================================================
     //                  DATA OBJECTS
     // ==================================================
@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Maven', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg' },
         { name: 'Postman', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg' },
         { name: 'GitHub', icon: 'https://img.icons8.com/ios-filled/50/github.png' },
-        { name: 'React Js', icon: 'https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000'}
+        { name: 'React Js', icon: 'https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000' }
     ];
-    
+
     const experiences = [
         {
             role: 'Software Development Intern',
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const projects = [
         { title: 'ZeeMerce', description: 'A full-stack multi-vender e-commerce platform.', image: 'assets/images/projects/ZeeMerce.png', github: 'https://github.com/ZeeshanMalik9/EZee-E-Commerce-Platform', live: 'https://zeeshanmalik9.github.io/EcommerceDoc/' },
+        { title: 'ZeeNotes', description: 'React Based Knowledge sharing Platform.', image: 'assets/images/projects/ZeeNotes.png', github: 'https://github.com/ZeeshanMalik9/ZeeNotes', live: 'https://main.d2g9rci737iq45.amplifyapp.com/' },
         { title: 'QiuzZee', description: 'A scalable microservices-based quiz platform with robust security using Spring Security, JWT, and OAuth2.', image: 'assets/images/projects/Quiz.png', github: 'https://github.com/ZeeshanMalik9/Quiz_Application_Spring', live: 'https://zeeshanmalik9.github.io/quizee_documentation_page/' },
         { title: 'FooZee', description: 'A full-stack food delivery application built with a classic Java EE stack (Servlets, JSP, JDBC).', image: 'assets/images/projects/food.png', github: 'https://github.com/ZeeshanMalik9/Food_Delivery_Web_Application', live: 'https://foozee-production.up.railway.app/' },
         { title: 'Pharma-Shift', description: 'An automated medicine transportation system using IoT, Python and Arduino.', image: 'assets/images/projects/medicine.jpg', github: 'https://github.com/ZeeshanMalik9/Pharma_Shift_Final_Year_Project', live: 'https://github.com/ZeeshanMalik9/Pharma_Shift_Final_Year_Project' },
@@ -50,92 +51,93 @@ document.addEventListener('DOMContentLoaded', () => {
         { title: 'STAN AI', description: 'A human-like AI chatbot with long-term memory, built with Node.js and the Gemini API.', image: 'assets/images/projects/stan.png', github: 'https://github.com/ZeeshanMalik9/STAN_AI', live: 'https://stan-ai.onrender.com/' }
 
     ];
-    
-    const certifications = [ 
-    {   image:'assets/images/certifications/TapInternship.jpg',
-        title: 'Internship: Full Stack Development',
-        description: 'Completed a 30-day intensive internship at NEXGATE PIONEER SOLUTIONS PVT. LTD., focusing on the full stack development lifecycle from 25.10.2023 to 25.11.2023.',
-        link: 'https://drive.google.com/file/d/1q__6C9_vyvuciztI3auRsNIryyRcfzBA/view?usp=drive_link' 
-    },
-    {
-    image: 'assets/images/certifications/Tap_Academy_Cirtificate.jpg',
-    title: 'Training: Full Stack Web Development',
-    description: 'Certificate of completion for successfully completing training in Full Stack Web Development from Tap Academy, covering technologies like Java, Python, Spring, and MySQL. [cite: 3]',
-    link: 'https://drive.google.com/file/d/1tmO5vPaY6hUQrf4ZXsUZa22EZ47oRTYd/view?usp=drive_link' 
-  },
-    {
-        image:'assets/images/certifications/publication.jpg',
-        title: 'Certificate of Publication',
-        description: 'Authored and published a manuscript titled "A Review Paper on Recent Cyberattacks and Proactive Steps to Prevent Attacks" in the Journal of Computer Technology & Applications (Volume 14, Issue 02, Year 2023).',
-        link: 'https://drive.google.com/file/d/1c7EE0RIc3jpfL44nf-T0ckqYm6IYqbUy/view?usp=drive_link' // Replace with link to the certificate or paper
-    },
-    {
-        image:'assets/images/certifications/gdsc.jpg',
-        title: 'Solution Challenge Ideathon Participant',
-        description: 'Successfully participated in the Ideathon held by Google Developer Student Club GMIT as part of Team "fusionX" on January 17, 2024.',
-        link: 'https://drive.google.com/file/d/19UoFdLFWFQRaiTR8s9GB-1oowfVI0qgp/view?usp=drive_link' 
-    },
-    {
-        image:'assets/images/certifications/inter2.jpg',
-        title: 'Internship: Current Trends & Technologies',
-        description: 'Successfully completed a research internship at the Department of Computer Science & Engineering, Jain Institute of Technology, from 11/10/2022 to 29/10/2022.',
-        link: 'https://drive.google.com/file/d/1i01j_jTvpasEnub0HV4V-OigciOtkvXQ/view?usp=drive_link' 
-    },
-    {
-      image: 'assets/images/certifications/inter3.jpg',
-      title: 'Internship: Full Stack Development',
-      description: 'Successfully completed a thirty-day internship on the Full Stack Development programme at NEXGATE PIONEER SOLUTIONS PVT. [cite_start]LTD. from 25.10.2023 to 25.11.2023. [cite: 2]',
-      link: 'https://drive.google.com/file/d/1B63NHtchMHcsjjBr-BtB5hD_jMuKXTHN/view?usp=drive_link' 
-    },
-    {
-        image:'assets/images/certifications/objectsAndApi.png',
-        title: 'Java Essential Training: Objects and APIs',
-        description: 'Course completion from LinkedIn Learning on Jul 31, 2023, focusing on core Java object-oriented principles and APIs.',
-        link: 'https://drive.google.com/file/d/1By9rgxOjuqC1lZU8W1-UV3WZfXYP-QxL/view?usp=drive_link' 
-    },
-    {
-        image:'assets/images/certifications/syntaxAndStructure.png',
-        title: 'Java Essential Training: Syntax and Structure',
-        description: 'Course completion from LinkedIn Learning on Jul 03, 2023, covering the fundamental syntax and structure of the Java language.',
-        link: 'https://drive.google.com/file/d/1BpYsqy3g7X-beDABrY4ACDJCsxlI0ZOF/view?usp=drive_link' 
-    },
-    {
-        image:'assets/images/certifications/CriticalThingkin.png',
-        title: 'Developing a Critical Thinking Mindset',
-        description: 'Course completion from LinkedIn Learning, an authorized training partner of the Project Management Institute, on Sep 24, 2023.',
-        link: 'https://drive.google.com/file/d/1By1oS4rPkDqdM9tXqCIBO4Xx3fbUDIBq/view?usp=drive_link'
-    },
-    {
-    image:'assets/images/certifications/biet.jpg',
-    title: 'Coding Competition Participant',
-    description: 'Participated in the G-QUEST 2.0 coding competition organized by Bapuji Institute of Engineering and Technology on December 26, 2023.',
-    link: 'https://drive.google.com/file/d/1vHIfufIc-rG9O2F01Ka6bqjmd3a_Gl8K/view?usp=drive_link' 
-    },
-    {
-    image:'assets/images/certifications/hasiruUsiru.jpg',
-    title: 'First Place: "Hasiru Usiru" Event',
-    description: 'Secured first place in the "Hasiru Usiru" event organized by the Dept. of CSE, Jain Institute of Technology, on December 5, 2023.',
-    link: 'https://drive.google.com/file/d/1R2UNQg9rGuWUo8EtM4ZyeK2MN3NzMEIk/view?usp=drive_link' 
-    },
-  {
-    image: 'assets/images/certifications/cpp2.jpg',
-    title: 'Second Place: Programming in C++ Role Play',
-    description: 'Secured second place in the "Programming in C++ - Role Play" event held on 11-03-2023 by the Department of Computer Science and Engineering at Jain Institute of Technology, Davangere. [cite: 1]',
-    link: 'https://drive.google.com/file/d/1EJ1Afhzfp3B1KAOmrrvGbdKP_d32HPX4/view?usp=drive_link'
-  },
-    {
-    image: 'assets/images/certifications/expo.jpg', 
-    title: 'Second Place: P-Expo 2024',
-    description: 'Secured second place in "P-Expo-2024", a project and product exhibition conducted by the Computer Science Engineering Department at Jain Institute of Technology on December 29, 2024. [cite: 2]',
-    link: '#' 
-  },
-  {
-    image: 'assets/images/certifications/spkIndia.jpg', 
-    title: 'Speak for India: District Level Participant',
-    description: 'Received a Certificate of Merit for participating at the district level of "Speak for India - Karnataka Edition", a state-level inter-collegiate debate competition held on December 20, 2023. [cite: 3]',
-    link: '#' 
-  }
-    
+
+    const certifications = [
+        {
+            image: 'assets/images/certifications/TapInternship.jpg',
+            title: 'Internship: Full Stack Development',
+            description: 'Completed a 30-day intensive internship at NEXGATE PIONEER SOLUTIONS PVT. LTD., focusing on the full stack development lifecycle from 25.10.2023 to 25.11.2023.',
+            link: 'https://drive.google.com/file/d/1q__6C9_vyvuciztI3auRsNIryyRcfzBA/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/Tap_Academy_Cirtificate.jpg',
+            title: 'Training: Full Stack Web Development',
+            description: 'Certificate of completion for successfully completing training in Full Stack Web Development from Tap Academy, covering technologies like Java, Python, Spring, and MySQL. [cite: 3]',
+            link: 'https://drive.google.com/file/d/1tmO5vPaY6hUQrf4ZXsUZa22EZ47oRTYd/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/publication.jpg',
+            title: 'Certificate of Publication',
+            description: 'Authored and published a manuscript titled "A Review Paper on Recent Cyberattacks and Proactive Steps to Prevent Attacks" in the Journal of Computer Technology & Applications (Volume 14, Issue 02, Year 2023).',
+            link: 'https://drive.google.com/file/d/1c7EE0RIc3jpfL44nf-T0ckqYm6IYqbUy/view?usp=drive_link' // Replace with link to the certificate or paper
+        },
+        {
+            image: 'assets/images/certifications/gdsc.jpg',
+            title: 'Solution Challenge Ideathon Participant',
+            description: 'Successfully participated in the Ideathon held by Google Developer Student Club GMIT as part of Team "fusionX" on January 17, 2024.',
+            link: 'https://drive.google.com/file/d/19UoFdLFWFQRaiTR8s9GB-1oowfVI0qgp/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/inter2.jpg',
+            title: 'Internship: Current Trends & Technologies',
+            description: 'Successfully completed a research internship at the Department of Computer Science & Engineering, Jain Institute of Technology, from 11/10/2022 to 29/10/2022.',
+            link: 'https://drive.google.com/file/d/1i01j_jTvpasEnub0HV4V-OigciOtkvXQ/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/inter3.jpg',
+            title: 'Internship: Full Stack Development',
+            description: 'Successfully completed a thirty-day internship on the Full Stack Development programme at NEXGATE PIONEER SOLUTIONS PVT. [cite_start]LTD. from 25.10.2023 to 25.11.2023. [cite: 2]',
+            link: 'https://drive.google.com/file/d/1B63NHtchMHcsjjBr-BtB5hD_jMuKXTHN/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/objectsAndApi.png',
+            title: 'Java Essential Training: Objects and APIs',
+            description: 'Course completion from LinkedIn Learning on Jul 31, 2023, focusing on core Java object-oriented principles and APIs.',
+            link: 'https://drive.google.com/file/d/1By9rgxOjuqC1lZU8W1-UV3WZfXYP-QxL/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/syntaxAndStructure.png',
+            title: 'Java Essential Training: Syntax and Structure',
+            description: 'Course completion from LinkedIn Learning on Jul 03, 2023, covering the fundamental syntax and structure of the Java language.',
+            link: 'https://drive.google.com/file/d/1BpYsqy3g7X-beDABrY4ACDJCsxlI0ZOF/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/CriticalThingkin.png',
+            title: 'Developing a Critical Thinking Mindset',
+            description: 'Course completion from LinkedIn Learning, an authorized training partner of the Project Management Institute, on Sep 24, 2023.',
+            link: 'https://drive.google.com/file/d/1By1oS4rPkDqdM9tXqCIBO4Xx3fbUDIBq/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/biet.jpg',
+            title: 'Coding Competition Participant',
+            description: 'Participated in the G-QUEST 2.0 coding competition organized by Bapuji Institute of Engineering and Technology on December 26, 2023.',
+            link: 'https://drive.google.com/file/d/1vHIfufIc-rG9O2F01Ka6bqjmd3a_Gl8K/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/hasiruUsiru.jpg',
+            title: 'First Place: "Hasiru Usiru" Event',
+            description: 'Secured first place in the "Hasiru Usiru" event organized by the Dept. of CSE, Jain Institute of Technology, on December 5, 2023.',
+            link: 'https://drive.google.com/file/d/1R2UNQg9rGuWUo8EtM4ZyeK2MN3NzMEIk/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/cpp2.jpg',
+            title: 'Second Place: Programming in C++ Role Play',
+            description: 'Secured second place in the "Programming in C++ - Role Play" event held on 11-03-2023 by the Department of Computer Science and Engineering at Jain Institute of Technology, Davangere. [cite: 1]',
+            link: 'https://drive.google.com/file/d/1EJ1Afhzfp3B1KAOmrrvGbdKP_d32HPX4/view?usp=drive_link'
+        },
+        {
+            image: 'assets/images/certifications/expo.jpg',
+            title: 'Second Place: P-Expo 2024',
+            description: 'Secured second place in "P-Expo-2024", a project and product exhibition conducted by the Computer Science Engineering Department at Jain Institute of Technology on December 29, 2024. [cite: 2]',
+            link: '#'
+        },
+        {
+            image: 'assets/images/certifications/spkIndia.jpg',
+            title: 'Speak for India: District Level Participant',
+            description: 'Received a Certificate of Merit for participating at the district level of "Speak for India - Karnataka Edition", a state-level inter-collegiate debate competition held on December 20, 2023. [cite: 3]',
+            link: '#'
+        }
+
     ];
 
     const galleryItems = [
@@ -165,13 +167,13 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.height = window.innerHeight;
 
         let particlesArray;
-        const mouse = { x: null, y: null, radius: (canvas.height/120) * (canvas.width/120) };
-        
+        const mouse = { x: null, y: null, radius: (canvas.height / 120) * (canvas.width / 120) };
+
         window.addEventListener('mousemove', e => {
             mouse.x = e.x;
             mouse.y = e.y;
         });
-        
+
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
                 this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY;
@@ -186,22 +188,22 @@ document.addEventListener('DOMContentLoaded', () => {
             update() {
                 if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
                 if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-                
+
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
-                if (distance < mouse.radius + this.size){
-                    if(mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 5;
-                    if(mouse.x > this.x && this.x > this.size * 10) this.x -= 5;
-                    if(mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 5;
-                    if(mouse.y > this.y && this.y > this.size * 10) this.y -= 5;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius + this.size) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 5;
+                    if (mouse.x > this.x && this.x > this.size * 10) this.x -= 5;
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 5;
+                    if (mouse.y > this.y && this.y > this.size * 10) this.y -= 5;
                 }
                 this.x += this.directionX;
                 this.y += this.directionY;
                 this.draw();
             }
         }
-        
+
         function initParticles() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 9000;
@@ -218,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function animateParticles() {
             requestAnimationFrame(animateParticles);
-            ctx.clearRect(0,0,innerWidth, innerHeight);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
             for (let i = 0; i < particlesArray.length; i++) {
                 particlesArray[i].update();
             }
@@ -227,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', () => {
             canvas.width = innerWidth;
             canvas.height = innerHeight;
-            mouse.radius = (canvas.height/120) * (canvas.width/120);
+            mouse.radius = (canvas.height / 120) * (canvas.width / 120);
             initParticles();
         });
         window.addEventListener('mouseout', () => {
@@ -282,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         setTimeout(typeEffect, typeSpeed);
     }
-    
+
     // ==================================================
     //           DYNAMIC CONTENT POPULATION
     // ==================================================
@@ -380,8 +382,8 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
     }
-    
-// --- Certifications Population ---
+
+    // --- Certifications Population ---
     const certificationsContainer = document.querySelector('.certifications-grid');
     if (certificationsContainer) {
         certifications.forEach(cert => {
@@ -413,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!galleryGrid) return;
         galleryGrid.innerHTML = '';
         const filteredItems = galleryItems.filter(item => filter === 'all' || item.category === filter);
-        
+
         filteredItems.forEach(item => {
             const galleryItem = document.createElement('div');
             galleryItem.className = 'gallery-item';
@@ -446,7 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === lightbox) lightbox.classList.remove('show');
         });
     }
-    
+
     // ==================================================
     //              NAVIGATION & CAROUSEL LOGIC
     // ==================================================
@@ -476,13 +478,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsPrevBtn = document.getElementById('projects-prev');
     const projectsNextBtn = document.getElementById('projects-next');
     let projectIndex = 0;
-    
+
     function setupProjectCarousel() {
         if (!carousel || projectCards3D.length === 0) return;
         const totalProjects = projectCards3D.length;
         const angle = 360 / totalProjects;
         const radius = (carousel.offsetWidth / 2) / Math.tan(Math.PI / totalProjects);
-        
+
         carousel.style.transform = `translateZ(-${radius}px)`;
 
         projectCards3D.forEach((card, i) => {
@@ -504,7 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateProjectCarousel();
         });
     }
-    
+
     // --- Mobile Menu ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -527,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         const messageStatus = document.getElementById('message-status');
-        contactForm.addEventListener('submit', function(event) {
+        contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
             const submitButton = this.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.innerHTML;
@@ -557,92 +559,92 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-     // --- Chatbot Logic ---
-            const chatToggle = document.getElementById('chat-toggle');
-            const chatbox = document.getElementById('chatbox');
-            const chatboxClose = document.getElementById('chatbox-close');
-            const chatForm = document.getElementById('chat-form');
-            const chatInput = document.getElementById('chat-input');
-            const messagesContainer = document.getElementById('chatbox-messages');
-            let chatHistory = [];
+    // --- Chatbot Logic ---
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatbox = document.getElementById('chatbox');
+    const chatboxClose = document.getElementById('chatbox-close');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const messagesContainer = document.getElementById('chatbox-messages');
+    let chatHistory = [];
 
-            const toggleChatbox = () => {
-                chatbox.classList.toggle('open');
-                if (chatbox.classList.contains('open') && messagesContainer.children.length === 0) {
-                    addMessage('bot', "Hello! I'm a bot trained on Zeeshan's resume. Feel free to ask me about his skills, projects, or experience.");
-                }
-            };
-
-            chatToggle.addEventListener('click', toggleChatbox);
-            chatboxClose.addEventListener('click', toggleChatbox);
-
-            function addMessage(sender, text) {
-                const messageElement = document.createElement('div');
-                messageElement.classList.add('chat-message', sender);
-                
-                // Sanitize text to prevent HTML injection
-                const textNode = document.createTextNode(text);
-                messageElement.appendChild(textNode);
-                
-                messagesContainer.appendChild(messageElement);
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            }
-            
-            function showThinkingIndicator() {
-                const thinkingElement = document.createElement('div');
-                thinkingElement.classList.add('chat-message', 'bot', 'thinking');
-                thinkingElement.innerHTML = `<span></span><span></span><span></span>`;
-                messagesContainer.appendChild(thinkingElement);
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            }
-
-            function removeThinkingIndicator() {
-                const thinkingElement = messagesContainer.querySelector('.thinking');
-                if (thinkingElement) {
-                    thinkingElement.remove();
-                }
-            }
-
-
-const getGeminiResponse = async (userInput) => {
-    showThinkingIndicator();
-
-    
-    const functionUrl = '/.netlify/functions/gemini';
-
-    try {
-        const response = await fetch(functionUrl, {
-            method: 'POST',
-            body: JSON.stringify({ userInput: userInput })
-        });
-        
-        const data = await response.json();
-        removeThinkingIndicator();
-        
-
-        if (data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
-            const botResponse = data.candidates[0].content.parts[0].text;
-            addMessage('bot', botResponse);
-        } else {
-            addMessage('bot', 'Sorry, I received an unexpected response. Please try again.');
+    const toggleChatbox = () => {
+        chatbox.classList.toggle('open');
+        if (chatbox.classList.contains('open') && messagesContainer.children.length === 0) {
+            addMessage('bot', "Hello! I'm a bot trained on Zeeshan's resume. Feel free to ask me about his skills, projects, or experience.");
         }
+    };
 
-    } catch (error) {
-        console.error('Error calling the serverless function:', error);
-        removeThinkingIndicator();
-        addMessage('bot', 'Sorry, I am having trouble connecting. Please try again later.');
+    chatToggle.addEventListener('click', toggleChatbox);
+    chatboxClose.addEventListener('click', toggleChatbox);
+
+    function addMessage(sender, text) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', sender);
+
+        // Sanitize text to prevent HTML injection
+        const textNode = document.createTextNode(text);
+        messageElement.appendChild(textNode);
+
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
-};
 
-            chatForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const userInput = chatInput.value.trim();
-                if (userInput) {
-                    addMessage('user', userInput);
-                    getGeminiResponse(userInput);
-                    chatInput.value = '';
-                }
+    function showThinkingIndicator() {
+        const thinkingElement = document.createElement('div');
+        thinkingElement.classList.add('chat-message', 'bot', 'thinking');
+        thinkingElement.innerHTML = `<span></span><span></span><span></span>`;
+        messagesContainer.appendChild(thinkingElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function removeThinkingIndicator() {
+        const thinkingElement = messagesContainer.querySelector('.thinking');
+        if (thinkingElement) {
+            thinkingElement.remove();
+        }
+    }
+
+
+    const getGeminiResponse = async (userInput) => {
+        showThinkingIndicator();
+
+
+        const functionUrl = '/.netlify/functions/gemini';
+
+        try {
+            const response = await fetch(functionUrl, {
+                method: 'POST',
+                body: JSON.stringify({ userInput: userInput })
             });
+
+            const data = await response.json();
+            removeThinkingIndicator();
+
+
+            if (data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
+                const botResponse = data.candidates[0].content.parts[0].text;
+                addMessage('bot', botResponse);
+            } else {
+                addMessage('bot', 'Sorry, I received an unexpected response. Please try again.');
+            }
+
+        } catch (error) {
+            console.error('Error calling the serverless function:', error);
+            removeThinkingIndicator();
+            addMessage('bot', 'Sorry, I am having trouble connecting. Please try again later.');
+        }
+    };
+
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const userInput = chatInput.value.trim();
+        if (userInput) {
+            addMessage('user', userInput);
+            getGeminiResponse(userInput);
+            chatInput.value = '';
+        }
+    });
 
 
 
